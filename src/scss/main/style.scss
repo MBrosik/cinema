@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap");
+
+@mixin Flexbox($direction, $gap: 5px) {
+   display: flex;
+   flex-direction: $direction;
+   align-items: center;
+   justify-content: center;
+   gap: $gap;
+}
+
+* {
+   box-sizing: border-box;
+   font-family: "Maven Pro", sans-serif;
+}
+
+body {
+   background-color: #393939;
+   color: white;
+   margin: 0;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+
+   &:visited {
+      color: white;
+      text-decoration: none;
+   }
+}
+button {
+   margin-top: 20px;
+   padding: 3px 7px;
+   font-size: 17px;
+   text-align: center;
+   cursor: pointer;
+   outline: none;
+   border: none;
+   border-radius: 8px;
+   background-color: rgb(251, 84, 43);
+   box-shadow: 0 3px #999;
+
+   &:hover {
+      background-color: rgb(223, 77, 41);
+   }
+
+   &:active {
+      background-color: rgb(223, 77, 41);
+      box-shadow: 0 1px #999;
+      transform: translate(0, 2px);
+   }
+}
+
+input {
+   background-color: #393939;
+   border: 1px solid #fb542b;
+   border-radius: 4px;
+   outline: none;
+   box-shadow: 0 0 0px white;
+   font-size: 15px;
+   padding: 5px;
+   color: white;
+   transition: box-shadow 0.2s ease-in-out;
+
+   &#text-url {
+      width: 300px;
+   }
+
+   &:focus {
+      outline: none;
+      box-shadow: 0 0 5px white;
+   }
+
+   &[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+   }
+}
+.warning {
+   color: red;
+   width: 400px;
+}
+
+#container {
+   display: grid;
+   grid-template-areas:
+      "header"
+      "main"
+      "Footer";
+   grid-template-rows: min-content auto 250px;
+   gap: 25px;
+
+   header {
+      $color: rgba(165, 164, 164, 0.07);
+
+      width: 100%;
+      background-color: $color;
+      box-shadow: 0 5px 5px $color;
+      padding-right: 25px;
+
+      grid-area: header;
+
+      display: grid;
+      grid-template-columns: 100px max-content max-content auto max-content max-content;
+      align-items: center;
+      column-gap: 25px;
+
+      a {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         padding: 5px;
+      }
+
+      img {
+         width: 100%;
+      }
+   }
+
+   main {
+      &.main-page {
+         $color: rgba(165, 164, 164, 0.07);
+         padding: 25px;
+         display: flex;
+
+         .film-content {
+            width: 200px;
+            border: 1px solid $color;
+            box-shadow: 0 0px 35px $color;
+            padding: 15px;
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 23px;
+            transition: transform 0.4s ease-in-out;
+            transform: scale(1);
+
+            &:hover {
+               transform: scale(1.1, 1.1);
+            }
+
+            img {
+               width: 100%;
+            }
+
+            .film-name {
+            }
+         }
+      }
+      &.screening-site,
+      &.seat-reservation {
+         .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            img {
+               width: 200px;
+            }
+
+            .title {
+            }
+         }
+      }
+
+      &.screening-site {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         gap: 40px;
+
+         .screenings-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+
+            .screening {
+               border: 1px solid black;
+               // box-shadow: 0 0px 35px black;
+               padding: 5px;
+            }
+         }
+      }
+
+      &.seat-reservation {
+         display: grid;
+         grid-template-areas:
+            "title seats"
+            ". button-area";
+         grid-template-columns: 400px max-content;
+
+         .title-container {
+            grid-area: title;
+         }
+
+         .seats-container {
+            display: grid;
+            gap: 2px;
+            grid-area: seats;
+
+            div {
+               text-align: center;
+            }
+
+            .seat {
+               border: 1px solid black;
+               cursor: pointer;
+
+               &.my-reserved {
+                  background-color: green;
+               }
+               &.reserved {
+                  background-color: black;
+                  cursor: default;
+               }
+            }
+         }
+         .button-container {
+            grid-area: button-area;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            // padding: 25px;
+         }
+      }
+      &.reserved-seats {
+         .reserved-container {
+            @include Flexbox(column, 15px);
+            flex-wrap: wrap;
+
+            .film-content {
+               @include Flexbox(column, 0);
+               .film-name {
+                  display: grid;
+                  // grid-template-columns: 120px 200px;
+                  overflow: hidden;
+                  color: rgb(82, 198, 255);
+                  // font-size: 12px;
+                  margin-top: 10px;
+                  padding: 5px;
+                  border-radius: 6px;
+                  // border: 4px solid rgb(251, 84, 43);
+                  width: max-content;
+
+                  div {
+                     @include Flexbox(row, 0);
+                     margin-top: 10px;
+                  }
+               }
+               .seats-container {
+                  overflow: hidden;
+                  color: rgb(82, 198, 255);
+                  // font-size: 12px;
+                  margin-top: 10px;
+                  padding: 5px;
+                  border-radius: 6px;
+                  border: 4px solid rgb(251, 84, 43);
+                  display: flex;
+                  // width: 400px;
+                  width: max-content;
+
+                  @include Flexbox(column, 0);
+
+                  .seat-title,
+                  .seat {
+                     padding-left: 25px;
+                     display: grid;
+                     grid-template-columns: 30px 70px 60px;
+                  }
+
+                  .seat-title {
+                     margin-bottom: 10px;
+                  }
+               }
+               .button-container {
+                  @include Flexbox(column, 0);
+
+                  a {
+                     width: min-content;
+
+                     text-decoration: none;
+                     display: block;
+                     margin-top: 20px;
+                     padding: 3px 7px;
+                     font-size: 17px;
+                     text-align: center;
+                     cursor: pointer;
+                     outline: none;
+                     border: none;
+                     border-radius: 8px;
+                     background-color: rgb(251, 84, 43);
+                     box-shadow: 0 3px #999;
+
+                     &:hover {
+                        background-color: rgb(223, 77, 41);
+                     }
+
+                     &:active {
+                        background-color: rgb(223, 77, 41);
+                        box-shadow: 0 1px #999;
+                        transform: translate(0, 2px);
+                     }
+                  }
+               }
+            }
+         }
+      }
+
+      &.admin-site {
+         display: grid;
+         // grid-template-columns: 500px;
+         grid-template-columns: max-content;
+         justify-content: center;
+         gap: 20px;
+
+         form {
+            // border-radius: 6px;
+            // border: 4px solid rgb(251, 84, 43);
+            padding: 20px;
+
+            display: grid;
+            grid-template-columns: auto 200px;
+            // grid-template-rows: ;
+            gap: 12px;
+
+            h1 {
+               // grid-area: title;
+               grid-column: 1 / span 2;
+               text-align: center;
+            }
+
+            label {
+               display: flex;
+               align-items: center;
+            }
+            // .button-container {
+            button {
+               grid-column: 1 / span 2;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+            }
+
+            &.new_room {
+            }
+            &.new-film {
+            }
+            &.new-screening {
+            }
+         }
+      }
+   }
+}

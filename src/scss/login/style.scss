@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap");
+
+* {
+   box-sizing: border-box;
+   font-family: "Maven Pro", sans-serif;
+}
+
+body {
+   background-color: #393939;
+   color: white;
+}
+
+input {
+   background-color: #393939;
+   border: 1px solid #fb542b;
+   border-radius: 4px;
+   outline: none;
+   box-shadow: 0 0 0px white;
+   font-size: 15px;
+   padding: 5px;
+   color: white;
+   transition: box-shadow 0.2s ease-in-out;
+
+   &#text-url {
+      width: 300px;
+   }
+
+   &:focus {
+      outline: none;
+      box-shadow: 0 0 5px white;
+   }
+
+   &[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+   }
+}
+
+button {
+   margin-top: 20px;
+   padding: 3px 7px;
+   font-size: 17px;
+   text-align: center;
+   cursor: pointer;
+   outline: none;
+   border: none;
+   border-radius: 8px;
+   background-color: rgb(251, 84, 43);
+   box-shadow: 0 3px #999;
+
+   &:hover {
+      background-color: rgb(223, 77, 41);
+   }
+
+   &:active {
+      background-color: rgb(223, 77, 41);
+      box-shadow: 0 1px #999;
+      transform: translate(0, 2px);
+   }
+}
+
+#container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+
+   height: calc(100vh - 80px);
+   width: 100%;
+}
+
+#warning {
+   color: red;
+}
+
+#information {
+   color: green;
+}
+
+#login-form {
+   display: grid;
+   grid-template-columns: 70px 200px;
+   grid-template-rows: 30px 30px;
+   gap: 15px;
+
+   input[type="text"] {
+      padding: 15px;
+   }
+
+   button {
+      grid-column: 1 / span 2;
+   }
+}
+
+#register-form {
+   display: grid;
+   grid-template-columns: 70px 200px;
+   grid-template-rows: 30px 30px;
+   gap: 15px;
+
+   input[type="text"] {
+      padding: 15px;
+   }
+
+   button {
+      grid-column: 1 / span 2;
+   }
+}
+
+a {
+   text-decoration: underline;
+   // display: block;
+   // margin-top: 20px;
+   // padding: 3px 7px;
+   // font-size: 17px;
+   // text-align: center;
+   // cursor: pointer;
+   // outline: none;
+   // border: none;
+   // border-radius: 8px;
+   // background-color: rgb(67, 160, 98);
+   // box-shadow: 0 3px #999;
+   grid-column: 1 / span 2;
+   color: white;
+   // width:270px;
+
+   &:hover {
+      // background-color: rgb(223, 77, 41);
+   }
+
+   &:active {
+      // background-color: rgb(223, 77, 41);
+      // box-shadow: 0 1px #999;
+      // transform: translate(0, 2px);
+   }
+   &:visited{
+      color: white;
+      text-decoration: none;
+   }
+
+}

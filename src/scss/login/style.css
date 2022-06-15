@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Maven Pro", sans-serif;
+}
+
+body {
+  background-color: #393939;
+  color: white;
+}
+
+input {
+  background-color: #393939;
+  border: 1px solid #fb542b;
+  border-radius: 4px;
+  outline: none;
+  -webkit-box-shadow: 0 0 0px white;
+          box-shadow: 0 0 0px white;
+  font-size: 15px;
+  padding: 5px;
+  color: white;
+  -webkit-transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: -webkit-box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+
+input#text-url {
+  width: 300px;
+}
+
+input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 5px white;
+          box-shadow: 0 0 5px white;
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 3px 7px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: #fb542b;
+  -webkit-box-shadow: 0 3px #999;
+          box-shadow: 0 3px #999;
+}
+
+button:hover {
+  background-color: #df4d29;
+}
+
+button:active {
+  background-color: #df4d29;
+  -webkit-box-shadow: 0 1px #999;
+          box-shadow: 0 1px #999;
+  -webkit-transform: translate(0, 2px);
+          transform: translate(0, 2px);
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: calc(100vh - 80px);
+  width: 100%;
+}
+
+#warning {
+  color: red;
+}
+
+#information {
+  color: green;
+}
+
+#login-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70px 200px;
+      grid-template-columns: 70px 200px;
+  -ms-grid-rows: 30px 30px;
+      grid-template-rows: 30px 30px;
+  gap: 15px;
+}
+
+#login-form input[type="text"] {
+  padding: 15px;
+}
+
+#login-form button {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+}
+
+#register-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70px 200px;
+      grid-template-columns: 70px 200px;
+  -ms-grid-rows: 30px 30px;
+      grid-template-rows: 30px 30px;
+  gap: 15px;
+}
+
+#register-form input[type="text"] {
+  padding: 15px;
+}
+
+#register-form button {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+}
+
+a {
+  text-decoration: underline;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  color: white;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
