@@ -15,9 +15,9 @@
    <?php
    if (isset($_SESSION["id"])) {
       if ($_SESSION["id"] == 0) { ?>
-         <a href="../admin">admin</a>
+         <a href="../admin">admin cockpit</a>
       <?php } else { ?>
-         <div></div>
+         <div><?php echo $_SESSION["login"] ?></div>
       <?php } ?>
    <?php } else { ?>
       <div></div>
