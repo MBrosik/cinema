@@ -19,7 +19,7 @@ if (isset($_GET["login"], $_GET["password"], $_GET["phone"])) {
       if (count($users) != 0) {
          header("Location: ../../register/?action=exist");
       } else {
-         $stmt = mysqli_prepare($connection, "INSERT INTO users(login,password,phone) VALUES(?, AES_ENCRYPT(?,'123'), ?) ");
+         $stmt = mysqli_prepare($connection, "INSERT INTO users(login,password,phone) VALUES(?, md5(?), ?) ");
          mysqli_stmt_bind_param($stmt, "sss", $_GET["login"], $_GET["password"], $_GET["phone"]);
          mysqli_stmt_execute($stmt);
 

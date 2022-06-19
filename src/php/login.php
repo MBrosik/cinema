@@ -9,7 +9,7 @@ if (isset($_GET["login"], $_GET["password"])) {
    // ----------
    // get users
    // ----------
-   $stmt = mysqli_prepare($connection, "SELECT * FROM users WHERE login = ? AND password=AES_ENCRYPT(?, 123)");
+   $stmt = mysqli_prepare($connection, "SELECT * FROM users WHERE login = ? AND password=md5(?)");
    mysqli_stmt_bind_param($stmt, "ss", $_GET["login"], $_GET["password"]);
    mysqli_stmt_execute($stmt);
 
@@ -20,6 +20,7 @@ if (isset($_GET["login"], $_GET["password"])) {
    if (count($users) != 0) {
       session_start();
       $_SESSION["id"] = $users[0]["id"];
+      $_SESSION["login"] = $users[0]["login"];
 
       // include("../../main_page")
 
