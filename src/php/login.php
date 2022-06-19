@@ -9,7 +9,7 @@ if (isset($_GET["login"], $_GET["password"])) {
    // ----------
    // get users
    // ----------
-   $stmt = mysqli_prepare($connection, "SELECT * FROM users WHERE login = ? AND AES_DECRYPT(password,'123') = ?");
+   $stmt = mysqli_prepare($connection, "SELECT * FROM users WHERE login = ? AND password=AES_ENCRYPT(?, 123)");
    mysqli_stmt_bind_param($stmt, "ss", $_GET["login"], $_GET["password"]);
    mysqli_stmt_execute($stmt);
 
