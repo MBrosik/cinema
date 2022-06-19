@@ -9,6 +9,8 @@ if (isset($_GET["login"], $_GET["password"])) {
    // ----------
    // get users
    // ----------
+   // AES_ENCRYPT("admin", 123)
+   
    $stmt = mysqli_prepare($connection, "SELECT * FROM users WHERE login = ? AND password=md5(?)");
    mysqli_stmt_bind_param($stmt, "ss", $_GET["login"], $_GET["password"]);
    mysqli_stmt_execute($stmt);
