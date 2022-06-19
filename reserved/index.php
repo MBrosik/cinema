@@ -33,7 +33,7 @@
                films.name AS film_name,
                movie_screenings.Date AS Date,               
                seats.column_number AS column_number,
-               seats.row_number AS row_number
+               seats.row_number
             FROM reserved
             INNER JOIN  movie_screenings
             ON reserved.movie_screening_id = movie_screenings.id 
